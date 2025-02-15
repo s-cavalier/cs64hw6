@@ -115,9 +115,8 @@ SwapCase:
 swapCaseLoopStart:
     # use $t0 as current char / ubyte
     # t1 is watching out for newline
-    li $t1, 10
     lbu $t0, 0($s0)
-    beq $t0, $t1, swapCaseLoopEnd # end when newline
+    beq $t0, $0, swapCaseLoopEnd # end when newline
     
     # if is upper then print
     # isupper(t0) == 65 <= t0 <= 90 == 64 < t0 < 91
